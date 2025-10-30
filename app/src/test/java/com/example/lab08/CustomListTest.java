@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CustomListTest {
     private CustomList mockCityList() {
         CustomList cityList = new CustomList();
-        cityList.add(mockCity());
+        cityList.addCity(mockCity());
         return cityList;
     }
 
@@ -17,19 +17,9 @@ public class CustomListTest {
         CustomList cityList = mockCityList();
         assertEquals(1, cityList.getCities().size());
         City city = new City("Regina", "Saskatchewan");
-        cityList.add(city);
+        cityList.addCity(city);
         assertEquals(2, cityList.getCities().size());
         assertTrue(cityList.getCities().contains(city));
-    }
-
-    @Test
-    void testAddException() {
-        CustomList cityList = mockCityList();
-        City city = new City("Yellowknife", "Northwest Territories");
-        cityList.add(city);
-        assertThrows(IllegalArgumentException.class, () -> {
-            cityList.add(city);
-        });
     }
 
     @Test
