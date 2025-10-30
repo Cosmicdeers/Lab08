@@ -30,4 +30,8 @@ public class CustomList {
         Collections.sort(list);
         return list;
     }
+
+    public int countCity(){
+        return cities.size();
+    }
 }
